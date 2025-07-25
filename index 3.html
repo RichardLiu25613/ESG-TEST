@@ -1,4 +1,5 @@
 
+html_root_fonts = """
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -9,17 +10,56 @@
     <!-- ✅ 中文字體 Noto Sans TC -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-    <!-- ✅ Mabry Pro 英文字體 -->
+    <!-- ✅ Mabry Pro 英文字體（直接從根目錄讀取） -->
     <style>
     @font-face {
       font-family: 'Mabry Pro';
-      src: url('fonts/Mabry-Regular-Pro.otf') format('opentype');
+      src: url('Mabry-Regular-Pro.otf') format('opentype');
       font-weight: 400;
     }
     @font-face {
       font-family: 'Mabry Pro';
-      src: url('fonts/Mabry-Bold-Pro.otf') format('opentype');
+      src: url('Mabry-Bold-Pro.otf') format('opentype');
       font-weight: 700;
+    }
+    @font-face {
+      font-family: 'Mabry Pro';
+      src: url('Mabry-Italic-Pro.otf') format('opentype');
+      font-weight: 400;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Mabry Pro';
+      src: url('Mabry-Light-Pro.otf') format('opentype');
+      font-weight: 300;
+    }
+    @font-face {
+      font-family: 'Mabry Pro';
+      src: url('Mabry-LightItalic-Pro.otf') format('opentype');
+      font-weight: 300;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Mabry Pro';
+      src: url('Mabry-Medium-Pro.otf') format('opentype');
+      font-weight: 500;
+    }
+    @font-face {
+      font-family: 'Mabry Pro';
+      src: url('Mabry-MediumItalic-Pro.otf') format('opentype');
+      font-weight: 500;
+      font-style: italic;
+    }
+    @font-face {
+      font-family: 'Mabry Pro';
+      src: url('Mabry-Black-Pro.otf') format('opentype');
+      font-weight: 900;
+    }
+    @font-face {
+      font-family: 'Mabry Pro';
+      src: url('Mabry-BlackItalic-Pro.otf') format('opentype');
+      font-weight: 900;
+      font-style: italic;
     }
 
     /* ✅ 全站字體設定 */
@@ -27,15 +67,51 @@
       font-family: 'Mabry Pro', 'Noto Sans TC', sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #f5f5f5;
+    }
+    header {
+        background-color: #1E8A4F;
+        color: white;
+        text-align: center;
+        padding: 50px 20px;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 2.5em;
+    }
+    header p {
+        margin: 10px 0 0;
+        font-size: 1.2em;
+    }
+    nav {
+        background: #145c33;
+        padding: 10px;
+        text-align: center;
+    }
+    nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    section {
+        padding: 40px 20px;
+        max-width: 900px;
+        margin: auto;
+    }
+    h2 {
+        color: #1E8A4F;
+    }
+    footer {
+        background: #1E8A4F;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
     }
     </style>
-
 </head>
 <body>
-    <h1>AUO 永續實驗室 Sustainability Lab</h1>
-    <p>這裡的字體會是 Mabry Pro（英文）＋ Noto Sans TC（中文）</p>
-</body>
-</html>
 
 <header>
     <h1>AUO 永續實驗室 Sustainability Lab</h1>
@@ -97,3 +173,11 @@
 
 </body>
 </html>
+"""
+
+# Save the new HTML file
+html_output_path = "/mnt/data/index_root_fonts.html"
+with open(html_output_path, "w", encoding="utf-8") as f:
+    f.write(html_root_fonts)
+
+html_output_path
